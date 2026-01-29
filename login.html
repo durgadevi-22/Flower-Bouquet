@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bloom & Bliss</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            width: 240px;
+            border-radius: 8px;
+            border: none;
+            margin: 6px;
+        }
+
+        button {
+            padding: 10px 30px;
+            border-radius: 8px;
+            border: none;
+            background-color: lightgreen;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .success {
+            color: lightgreen;
+            font-size: 50px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .box {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🌸 Bloom & Bliss Login 🌸</h2>
+
+<div id="loginBox">
+    <input type="text" id="user" placeholder="Username"><br>
+    <input type="password" id="pass" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="error" class="error"></p>
+</div>
+
+<div id="detailsBox" style="display:none;">
+    <div class="success">✔️</div>
+    <h2>Login Successful</h2>
+
+    <h3>Bouquet Details</h3>
+
+    <select>
+        <option>Bouquet Type</option>
+        <option>Rose Bouquet</option>
+        <option>Mixed Flower Bouquet</option>
+        <option>Wedding Special Bouquet</option>
+    </select><br>
+
+    <select>
+        <option>Flower Components</option>
+        <option>Roses</option>
+        <option>Lilies</option>
+        <option>Jasmine</option>
+        <option>Seasonal Flowers</option>
+    </select><br>
+
+    <select>
+        <option>Purpose</option>
+        <option>Birthday</option>
+        <option>Anniversary</option>
+        <option>Wedding</option>
+        <option>Surprise Gift</option>
+    </select><br>
+
+    <textarea rows="3" placeholder="Additional Message (optional)"></textarea><br>
+    <button onclick="goHome()">Next ➜</button>
+</div>
+
+<script>
+function login() {
+    var u = document.getElementById("user").value;
+    var p = document.getElementById("pass").value;
+
+    if (u === "" || p === "") {
+        document.getElementById("error").innerHTML = "❌ Please fill the form correctly";
+    } else {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("detailsBox").style.display = "block";
+    }
+}
+
+function goHome() {
+    window.location.href = "home.html"; // main page
+}
+</script>
+
+</body>
+</html>
